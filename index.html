@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Shoaib Khan — Technical Support, Operations, WordPress & Web Development Portfolio">
+<title>Shoaib Khan | Portfolio</title>
+<style>
+:root{
+  --bg:#08090c; --surface:#111318; --surface2:#171a21; --text:#f5f7fb;
+  --muted:#9ca3af; --line:rgba(255,255,255,.09); --accent:#8b5cf6;
+  --accent2:#22d3ee; --max:1180px; --radius:22px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:
+radial-gradient(circle at 80% 5%,rgba(139,92,246,.16),transparent 28%),
+radial-gradient(circle at 10% 25%,rgba(34,211,238,.08),transparent 25%),var(--bg);
+color:var(--text);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.container{width:min(var(--max),92%);margin:auto}
+nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:20;width:min(920px,92%);
+background:rgba(12,14,18,.72);backdrop-filter:blur(18px);border:1px solid var(--line);
+border-radius:999px;padding:10px 14px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;letter-spacing:-.04em}.logo span{color:var(--accent2)}
+.navlinks{display:flex;gap:22px;font-size:13px;color:#cbd0da}
+.navlinks a:hover{color:white}
+.hero{min-height:100vh;display:grid;place-items:center;padding:140px 0 80px}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:70px;align-items:center}
+.eyebrow{display:inline-flex;gap:9px;align-items:center;padding:7px 11px;border:1px solid var(--line);
+background:rgba(255,255,255,.035);border-radius:999px;color:#cbd5e1;font-size:12px;margin-bottom:20px}
+.dot{width:7px;height:7px;border-radius:50%;background:#34d399;box-shadow:0 0 16px #34d399}
+h1{font-size:clamp(48px,7vw,88px);line-height:.98;letter-spacing:-.065em;max-width:800px}
+.gradient{background:linear-gradient(100deg,#fff 15%,#b8a6ff 55%,#67e8f9);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:18px;color:var(--muted);max-width:690px;margin:26px 0}
+.buttons{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:12px 17px;border-radius:12px;border:1px solid var(--line);font-weight:700;font-size:14px}
+.btn.primary{background:#fff;color:#090a0d;border-color:#fff}
+.btn.secondary{background:rgba(255,255,255,.04)}
+.btn:hover{transform:translateY(-2px)}
+.hero-card{position:relative;border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));
+border-radius:30px;padding:30px;box-shadow:0 30px 100px rgba(0,0,0,.35)}
+.avatar{width:100px;height:100px;border-radius:28px;background:linear-gradient(135deg,#8b5cf6,#22d3ee);
+display:grid;place-items:center;font-size:34px;font-weight:900;color:#08090c;margin-bottom:26px}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+.stat{border:1px solid var(--line);background:rgba(0,0,0,.18);padding:16px;border-radius:16px}
+.stat b{font-size:22px;display:block}.stat small{color:var(--muted)}
+section{padding:100px 0}
+.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:35px}
+.kicker{color:#67e8f9;text-transform:uppercase;letter-spacing:.16em;font-size:11px;font-weight:800}
+h2{font-size:clamp(32px,4vw,52px);letter-spacing:-.05em;line-height:1.05;margin-top:9px}
+.section-head p{max-width:520px;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{border:1px solid var(--line);background:rgba(255,255,255,.035);border-radius:var(--radius);padding:24px}
+.card h3{margin:8px 0;font-size:20px}.card p{color:var(--muted);font-size:14px}
+.icon{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:rgba(139,92,246,.14);color:#c4b5fd;font-weight:800}
+.tags{display:flex;gap:7px;flex-wrap:wrap;margin-top:16px}.tag{font-size:11px;color:#cbd5e1;border:1px solid var(--line);padding:5px 8px;border-radius:999px}
+.timeline{position:relative;display:grid;gap:18px}
+.job{display:grid;grid-template-columns:170px 1fr;gap:35px;padding:24px 0;border-top:1px solid var(--line)}
+.job-date{color:var(--muted);font-size:13px}.job h3{font-size:22px}.company{color:#c4b5fd;font-weight:700}.job ul{margin-top:12px;padding-left:19px;color:var(--muted);font-size:14px}.job li{margin:5px 0}
+.skills{display:flex;flex-wrap:wrap;gap:10px}.skill{padding:11px 14px;border-radius:12px;background:rgba(255,255,255,.045);border:1px solid var(--line);font-size:13px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}.filter{cursor:pointer;border:1px solid var(--line);background:transparent;color:#cbd5e1;padding:9px 13px;border-radius:999px}.filter.active,.filter:hover{background:#fff;color:#090a0d}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.project{border:1px solid var(--line);background:rgba(255,255,255,.035);border-radius:20px;overflow:hidden;transition:.25s}
+.project:hover{transform:translateY(-5px);border-color:rgba(139,92,246,.5)}
+.preview{height:210px;background:#0e1117;position:relative;overflow:hidden}
+.preview iframe{width:100%;height:100%;border:0;transform:scale(.55);transform-origin:0 0;width:182%;height:182%;pointer-events:none}
+.preview .fallback{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(135deg,#111827,#1e1b4b);font-weight:800;font-size:18px}
+.project-body{padding:19px}.project-body h3{font-size:18px}.project-body p{font-size:13px;color:var(--muted);margin:5px 0 14px}
+.project-actions{display:flex;justify-content:space-between;align-items:center}.visit{font-size:12px;font-weight:800;color:#a5f3fc}
+.contact{border:1px solid var(--line);border-radius:30px;padding:45px;background:linear-gradient(135deg,rgba(139,92,246,.12),rgba(34,211,238,.06))}
+.contact-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:end}
+.contact h2{max-width:700px}.contact p{color:var(--muted);margin:15px 0 25px}.contact-links{display:grid;gap:10px}.contact-links a{padding:13px 15px;border:1px solid var(--line);border-radius:12px;background:rgba(0,0,0,.15);font-size:13px}
+footer{padding:35px 0 50px;color:#737b88;font-size:12px;display:flex;justify-content:space-between;border-top:1px solid var(--line)}
+@media(max-width:900px){.hero-grid,.contact-grid{grid-template-columns:1fr}.cards,.projects{grid-template-columns:1fr 1fr}.navlinks{display:none}}
+@media(max-width:620px){.cards,.projects{grid-template-columns:1fr}.job{grid-template-columns:1fr;gap:6px}.hero{padding-top:120px}nav{justify-content:center}.section-head{display:block}.section-head p{margin-top:15px}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="#home">SK<span>.</span></a>
+  <div class="navlinks">
+    <a href="#about">About</a><a href="#experience">Experience</a><a href="#work">Work</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<main id="home">
+<section class="hero">
+<div class="container hero-grid">
+  <div>
+    <div class="eyebrow"><span class="dot"></span> Available for opportunities</div>
+    <h1>Building Digital<br><span class="gradient">Solutions That Work.</span></h1>
+    <p>I’m <b>Shoaib Khan</b> — a technology and operations professional focused on building practical digital solutions, improving workflows, and creating business-ready web experiences.</p>
+    <div class="buttons">
+      <a class="btn primary" href="#work">View My Work ↗</a>
+      <a class="btn secondary" href="mailto:shoaibkhan04860@gmail.com">Let's Connect</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="avatar">SK</div>
+    <h3>Technology & Operations Professional</h3>
+    <p style="color:var(--muted);font-size:14px;margin-top:8px">Gwalior, India · Cross-functional coordination · Reporting · Troubleshooting · Web projects</p>
+    <div class="stat-grid">
+      <div class="stat"><b>1.5+</b><small>Years experience</small></div>
+      <div class="stat"><b>9+</b><small>Live web projects</small></div>
+      <div class="stat"><b>10K+</b><small>Records analyzed</small></div>
+      <div class="stat"><b>India + UAE</b><small>Global stakeholders</small></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="about">
+<div class="container">
+  <div class="section-head">
+    <div><div class="kicker">01 / About</div><h2>Where technology meets operations.</h2></div>
+    <p>My work sits between technical problem-solving, team coordination, reporting, and practical website development.</p>
+  </div>
+  <div class="cards">
+    <div class="card"><div class="icon">01</div><h3>Technical Support</h3><p>L1/L2 troubleshooting, ticket resolution, escalation handling, RCA, TAT/SLA governance and stakeholder communication.</p><div class="tags"><span class="tag">Freshdesk</span><span class="tag">Jira</span><span class="tag">CRM</span></div></div>
+    <div class="card"><div class="icon">02</div><h3>Operations Management</h3><p>Workflow distribution, task assignment, deadline tracking, reporting, cross-functional coordination and delivery follow-up.</p><div class="tags"><span class="tag">Operations</span><span class="tag">Reporting</span><span class="tag">Coordination</span></div></div>
+    <div class="card"><div class="icon">03</div><h3>Web Development</h3><p>Business websites, WordPress-based websites and coded web experiences designed around practical business needs.</p><div class="tags"><span class="tag">WordPress</span><span class="tag">HTML/CSS/JS</span><span class="tag">Responsive UI</span></div></div>
+  </div>
+</div>
+</section>
+
+<section id="experience">
+<div class="container">
+  <div class="section-head"><div><div class="kicker">02 / Experience</div><h2>Professional journey.</h2></div></div>
+  <div class="timeline">
+    <article class="job"><div class="job-date">07/2026 – Present</div><div><h3>Operations Manager <span class="company">— Scalebrity</span></h3><ul><li>Manage day-to-day operations, workflow distribution and task movement from assignment to completion.</li><li>Assign and prioritize work, track deadlines, resolve blockers and maintain operational reports.</li><li>Coordinate stakeholders and drive accountability for timely delivery.</li></ul></div></article>
+    <article class="job"><div class="job-date">02/2026 – 06/2026</div><div><h3>Media Search Analyst <span class="company">— TELUS International</span></h3><ul><li>Performed search quality and relevance evaluation against defined guidelines and quality benchmarks.</li><li>Reviewed content for policy compliance and evaluated ad relevance and placement quality.</li><li>Maintained consistency and accuracy across high-volume evaluation tasks.</li></ul></div></article>
+    <article class="job"><div class="job-date">05/2025 – 01/2026</div><div><h3>Technical Support Executive <span class="company">— Extramarks</span></h3><ul><li>Supported users through L1/L2 troubleshooting on LMS and Admin Panel systems.</li><li>Handled escalations, aging-ticket clearance, RCA and Jira-based engineering coordination.</li><li>Performed data validation/cleaning and created reports for issue trends, TAT and reliability.</li></ul></div></article>
+    <article class="job"><div class="job-date">08/2024 – 10/2024</div><div><h3>Data Science Intern <span class="company">— Unified Mentor</span></h3><ul><li>Built interactive Power BI dashboards using Power Query and DAX over 10,000+ records.</li><li>Created visualizations and presentations for stakeholder decision-making.</li></ul></div></article>
+  </div>
+</div>
+</section>
+
+<section id="work">
+<div class="container">
+  <div class="section-head">
+    <div><div class="kicker">03 / Selected Work</div><h2>Websites I’ve built.</h2></div>
+    <p>Live projects hosted on Scalebrity subdomains. Click any project to open the live website.</p>
+  </div>
+  <div class="filters">
+    <button class="filter active" data-filter="all">All</button>
+    <button class="filter" data-filter="business">Business</button>
+    <button class="filter" data-filter="commerce">Commerce</button>
+    <button class="filter" data-filter="service">Services</button>
+  </div>
+  <div class="projects">
+    <article class="project" data-cat="business">
+      <div class="preview"><iframe loading="lazy" src="https://scalebrity.in" title="Scalebrity"></iframe></div>
+      <div class="project-body"><h3>Scalebrity</h3><p>Business website & WhatsApp API platform presentation.</p><div class="project-actions"><span class="tag">Business</span><a class="visit" target="_blank" href="https://scalebrity.in">Visit ↗</a></div></div>
+    </article>
+    <article class="project" data-cat="business">
+      <div class="preview"><iframe loading="lazy" src="https://adarshstationery.scalebrity.in" title="Adarsh Stationery"></iframe></div>
+      <div class="project-body"><h3>Adarsh Stationery</h3><p>Business-focused website for a local brand.</p><div class="project-actions"><span class="tag">Business</span><a class="visit" target="_blank" href="https://adarshstationery.scalebrity.in">Visit ↗</a></div></div>
+    </article>
+    <article class="project" data-cat="service">
+      <div class="preview"><iframe loading="lazy" src="https://dheerendrasinghchauhan.scalebrity.in" title="Dheerendra Singh Chauhan"></iframe></div>
+      <div class="project-body"><h3>Dheerendra Singh Chauhan</h3><p>Personal/service-oriented web presence.</p><div class="project-actions"><span class="tag">Services</span><a class="visit" target="_blank" href="https://dheerendrasinghchauhan.scalebrity.in">Visit ↗</a></div></div>
+    </article>
+    <article class="project" data-cat="service">
+      <div class="preview"><iframe loading="lazy" src="https://foodforneedy.scalebrity.in" title="Food For Needy"></iframe></div>
+      <div class="project-body"><h3>Food For Needy</h3><p>Community-focused website for a registered society.</p><div class="project-actions"><span class="tag">Services</span><a class="visit" target="_blank" href="https://foodforneedy.scalebrity.in">Visit ↗</a></div></div>
+    </article>
+    <article class="project" data-cat="commerce">
+      <div class="preview"><iframe loading="lazy" src="https://gehnajewels.scalebrity.in" title="Gehna Jewellers"></iframe></div>
+      <div class="project-body"><h3>Gehna Jewellers</h3><p>Jewellery commerce-style website with collections and enquiry flow.</p><div class="project-actions"><span class="tag">Commerce</span><a class="visit" target="_blank" href="https://gehnajewels.scalebrity.in">Visit ↗</a></div></div>
+    </article>
+    <article class="project" data-cat="business">
+      <div class="preview"><iframe loading="lazy" src="https://murarilalshyamkumar.scalebrity.in" title="Murari Lal Shyam Kumar"></iframe></div>
+      <div class="project-body"><h3>Murari Lal Shyam Kumar</h3><p>Business website created for a local enterprise.</p><div class="project-actions"><span class="tag">Business</span><a class="visit" target="_blank" href="https://murarilalshyamkumar.scalebrity.in">Visit ↗</a></div></div>
+    </article>
+    <article class="project" data-cat="business">
+      <div class="preview"><iframe loading="lazy" src="https://nurraniherbalprivatelimited.scalebrity.in" title="Nurrani Herbal"></iframe></div>
+      <div class="project-body"><h3>Nurrani Herbal Pvt. Ltd.</h3><p>Company website for a herbal business.</p><div class="project-actions"><span class="tag">Business</span><a class="visit" target="_blank" href="https://nurraniherbalprivatelimited.scalebrity.in">Visit ↗</a></div></div>
+    </article>
+    <article class="project" data-cat="business">
+      <div class="preview"><iframe loading="lazy" src="https://rajkumartraders.scalebrity.in" title="Rajkumar Traders"></iframe></div>
+      <div class="project-body"><h3>Rajkumar Traders</h3><p>Local trading-services website focused on business enquiries.</p><div class="project-actions"><span class="tag">Business</span><a class="visit" target="_blank" href="https://rajkumartraders.scalebrity.in">Visit ↗</a></div></div>
+    </article>
+    <article class="project" data-cat="service">
+      <div class="preview"><iframe loading="lazy" src="https://tlbholidays.scalebrity.in" title="TLB Holidays"></iframe></div>
+      <div class="project-body"><h3>TLB Holidays</h3><p>Travel and holiday-service website.</p><div class="project-actions"><span class="tag">Services</span><a class="visit" target="_blank" href="https://tlbholidays.scalebrity.in">Visit ↗</a></div></div>
+    </article>
+  </div>
+</div>
+</section>
+
+<section id="skills">
+<div class="container">
+  <div class="section-head"><div><div class="kicker">04 / Skills</div><h2>Tools I work with.</h2></div></div>
+  <div class="skills">
+    <span class="skill">Operations Management</span><span class="skill">Technical Support</span><span class="skill">WordPress</span>
+    <span class="skill">Website Development</span><span class="skill">HTML</span><span class="skill">CSS</span><span class="skill">JavaScript</span>
+    <span class="skill">Freshdesk</span><span class="skill">Jira</span><span class="skill">CRM</span><span class="skill">Advanced Excel</span>
+    <span class="skill">Pivot Tables</span><span class="skill">VLOOKUP</span><span class="skill">MySQL</span><span class="skill">Power BI</span>
+    <span class="skill">Power Query</span><span class="skill">DAX</span><span class="skill">Data Cleaning</span><span class="skill">Data Validation</span>
+    <span class="skill">Stakeholder Communication</span><span class="skill">Root Cause Analysis</span>
+  </div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+  <div class="contact">
+    <div class="contact-grid">
+      <div><div class="kicker">05 / Contact</div><h2>Have a project, role or opportunity in mind?</h2><p>Let’s connect about technical support, operations, website development or digital projects.</p><a class="btn primary" href="mailto:shoaibkhan04860@gmail.com">Email Me ↗</a></div>
+      <div class="contact-links">
+        <a href="mailto:shoaibkhan04860@gmail.com">✉ shoaibkhan04860@gmail.com</a>
+        <a href="tel:+918269848348">☎ +91 82698 48348</a>
+        <!-- <a href="https://scalebrity.in" target="_blank">↗ View Scalebrity</a> -->
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+</main>
+
+<footer class="container">
+  <span>© 2026 Shoaib Khan</span><span>Technology · Operations · Digital Solutions</span>
+</footer>
+
+<script>
+const filters=document.querySelectorAll('.filter');
+const projects=document.querySelectorAll('.project');
+filters.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    filters.forEach(x=>x.classList.remove('active')); btn.classList.add('active');
+    const f=btn.dataset.filter;
+    projects.forEach(p=>p.style.display=(f==='all'||p.dataset.cat===f)?'block':'none');
+  });
+});
+</script>
+</body>
+</html>
